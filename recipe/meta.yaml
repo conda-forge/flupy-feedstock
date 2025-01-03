@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flupy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flupy-{{ version }}.tar.gz
   sha256: 42aab3b4b3eb1984a4616c40d8f049ecdee546eaad9467470731d456dbff7fa4
 
 build:
@@ -15,14 +15,14 @@ build:
     - flu_precommit = flupy.cli.cli:precommit
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - typing_extensions
 
 test:
@@ -33,6 +33,7 @@ test:
     - flu --help  # [not win]
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/olirice/flupy
