@@ -1,5 +1,5 @@
 {% set name = "flupy" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flupy-{{ version }}.tar.gz
-  sha256: 42aab3b4b3eb1984a4616c40d8f049ecdee546eaad9467470731d456dbff7fa4
+  sha256: c28ff659b55800a26a64dd0ac1cc616355900718b87978c2db06f5e5cfb58535
 
 build:
   entry_points:
@@ -15,7 +15,7 @@ build:
     - flu_precommit = flupy.cli.cli:precommit
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
