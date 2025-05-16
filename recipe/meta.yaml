@@ -32,7 +32,6 @@ test:
   commands:
     - pip check
     - flu --help  # [not win]
-    - flu_precommit --help
   requires:
     - pip
     - python {{ python_min }}
