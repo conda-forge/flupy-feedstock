@@ -7,7 +7,7 @@ Home: https://github.com/olirice/flupy
 
 Package license: MIT
 
-Summary: Method chaining built on generators
+Summary: Fluent data processing in Python - a chainable stream processing library for expressive data manipulation using method chaining
 
 Current build status
 ====================
