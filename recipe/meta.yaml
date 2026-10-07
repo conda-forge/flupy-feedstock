@@ -1,13 +1,13 @@
 {% set name = "flupy" %}
-{% set version = "1.2.3" %}
+{% set version = "1.2.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flupy-{{ version }}.tar.gz
-  sha256: 220b6d40dea238cd2d66784c0d4d2a5483447a48acd343385768e0c740af9609
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/flupy-{{ version }}.tar.gz
+  sha256: 0b984f56f010f399b5f7e7b92b9af285d2058e2239849bb516e5dcb2ccd746e6
 
 build:
   entry_points:
