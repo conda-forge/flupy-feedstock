@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.2.4"
+  version: "1.2.5"
 
 package:
   name: flupy
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/f/flupy/flupy-${{ version }}.tar.gz
-  sha256: dad657113e4a271a322229dc2926c5154d4a926c6ba8154b604f7e9cdda5c3e6
+  sha256: 0b984f56f010f399b5f7e7b92b9af285d2058e2239849bb516e5dcb2ccd746e6
 
 build:
   number: 0
