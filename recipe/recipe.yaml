@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  version: "1.2.4"
+
+package:
+  name: flupy
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/f/flupy/flupy-${{ version }}.tar.gz
+  sha256: dad657113e4a271a322229dc2926c5154d4a926c6ba8154b604f7e9cdda5c3e6
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - flu = flupy.cli.cli:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - flupy
+      pip_check: true
+  - requirements:
+      run:
+        - pip
+        - python
+    script:
+      - flu --help
+
+about:
+  summary: Fluent data processing in Python - a chainable stream processing library for expressive data manipulation using method chaining
+  license: MIT
+  license_file: LICENSE.md
+  homepage: https://pypi.org/project/flupy/
+  documentation: https://flupy.readthedocs.io
+  repository: https://github.com/olirice/flupy
+
+extra:
+  recipe-maintainers:
+    - abraha2d
